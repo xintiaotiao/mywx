@@ -141,11 +141,13 @@ class wechatCallbackapiTest
                                         $contentStr = "好遗憾，不小心失去了你，我会想你的！\r\n".date('Y-m-d H:i:s',time());
                                         $resultStr = sprintf($resposeTpl[$msgType], $fromUsername, $toUsername, $time, $msgType, $contentStr);
                                         echo $resultStr;
-                                    }elseif($postObj->Event == 'click' && $postObj->EventKey == 'help' ){
-                                        $msgType = "text";
-                                        $contentStr = "好遗憾，不小心失去了你，我会想你的！\r\n".date('Y-m-d H:i:s',time());
-                                        $resultStr = sprintf($resposeTpl[$msgType], $fromUsername, $toUsername, $time, $msgType, $contentStr);
-                                        echo $resultStr;
+                                    }elseif($postObj->Event == 'click'){
+                                        if($postObj->EventKey == 'help'){
+                                            $msgType = "text";
+                                            $contentStr = "本测试号具有以下文本回复功能\r\n\r\n1、输入1可以看小说。\r\n2、输入2可以看图片。\r\n3、输入3可以听音乐。\r\n4、另外，还可以插入图片、语言、位置等。\r\n\r\n温馨提示：如果无聊，可以随意输入文字，便可以和机器人聊天哦！\r\n".date('Y-m-d H:i:s',time());
+                                            $resultStr = sprintf($resposeTpl[$msgType], $fromUsername, $toUsername, $time, $msgType, $contentStr);
+                                            echo $resultStr;
+                                        } 
                                     }
                                    break;
                                case 'image':
