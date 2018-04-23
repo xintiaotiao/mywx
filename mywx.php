@@ -56,16 +56,12 @@ class wechatCallbackapiTest
                                         if($keyword == '?' || $keyword == '？')
                                            {
                                                 $msgType = "text";
-                                                $contentStr = "本测试号具有以下文本回复功能\r\n\r\n1、输入1可以看小说。\r\n2、输入2可以看图片。\r\n3、输入3可以听音乐。\r\n4、另外，还可以插入图片、语言、位置等。\r\n\r\n温馨提示：如果无聊，可以随意输入文字，便可以和机器人聊天哦！\r\n".date('Y-m-d H:i:s',time());
+                                                $contentStr = "本测试号具有以下文本回复功能\r\n\r\n1、输入1可以看小说。\r\n2、输入2可以看图片。\r\n3、输入3可以听音乐。\r\n4、另外，还可以插入图片、语言、位置等。\r\n\r\n温馨提示：如果无聊，可以随意输入文字，便可以和机器人聊天哦，还可以查天气学英语呢！\r\n".date('Y-m-d H:i:s',time());
                                                 $resultStr = sprintf($resposeTpl[$msgType], $fromUsername, $toUsername, $time, $msgType, $contentStr);
                                                 echo $resultStr;
                                            }elseif($keyword == '1'){
                                                 $msgType = "text";
-                                                $contentStr = "微信公众平台开发概述
-
-    微信公众平台是运营者通过公众号为微信用户提供资讯和服务的平台，而公众平台开发接口则是提供服务的基础，开发者在公众平台网站中创建公众号、获取接口权限后，可以通过阅读本接口文档来帮助开发。
-
-    为了识别用户，每个用户针对每个公众号会产生一个安全的OpenID，如果需要在多公众号、移动应用之间做用户共通，则需前往微信开放平台，将这些公众号和应用绑定到一个开放平台账号下，绑定后，一个用户虽然对多个公众号和应用有多个不同的OpenID，但他对所有这些同一开放平台账号下的公众号和应用，只有一个UnionID，可以在用户管理-获取用户基本信息（UnionID机制）文档了解详情。\r\n".date('Y-m-d H:i:s',time());
+                                                $contentStr = "微信公众平台开发概述微信公众平台是运营者通过公众号为微信用户提供资讯和服务的平台，而公众平台开发接口则是提供服务的基础，开发者在公众平台网站中创建公众号、获取接口权限后，可以通过阅读本接口文档来帮助开发。\r\n为了识别用户，每个用户针对每个公众号会产生一个安全的OpenID，如果需要在多公众号、移动应用之间做用户共通，则需前往微信开放平台，将这些公众号和应用绑定到一个开放平台账号下，绑定后，一个用户虽然对多个公众号和应用有多个不同的OpenID，但他对所有这些同一开放平台账号下的公众号和应用，只有一个UnionID，可以在用户管理-获取用户基本信息（UnionID机制）文档了解详情。\r\n".date('Y-m-d H:i:s',time());
                                                  $resultStr = sprintf($resposeTpl[$msgType], $fromUsername, $toUsername, $time, $msgType, $contentStr);
                                                 echo $resultStr;
                                            }elseif($keyword == '2'){
@@ -75,7 +71,7 @@ class wechatCallbackapiTest
                                                     $title = "图片欣赏".$i;
                                                     $description ="自定义图片集".$i;
                                                     $picUrl = "http://1.xintiaotiao.applinzi.com/images/".$i.".jpg";
-                                                    $url = "http://www.xintiaotiao.top";
+                                                    $url = "http://xintiaotiao.github.io";
                                                     $str .=sprintf($resposeTpl['news_item'],$title,$description,$picUrl,$url);
                                                 }
                                                 $resultStr = sprintf($resposeTpl[$msgType], $fromUsername, $toUsername, $time, $msgType , $count,$str);
